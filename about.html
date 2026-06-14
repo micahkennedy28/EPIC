@@ -4,159 +4,214 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — E.P.i.C. Youth Ministry</title>
-  <link rel="icon" href="favicon.svg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            background: '#0A0A0A', foreground: '#FFFFFF',
-            card: '#111111', border: '#262626',
-            primary: { DEFAULT: '#D4AF37', foreground: '#0A0A0A' },
-            secondary: { DEFAULT: '#F97316', foreground: '#FFFFFF' },
-            accent: { DEFAULT: '#3B82F6', foreground: '#FFFFFF' },
-            muted: { DEFAULT: '#262626', foreground: '#A6A6A6' },
-          },
-          fontFamily: {
-            heading: ['Anton','sans-serif'],
-            subheading: ['Bebas Neue','sans-serif'],
-            sans: ['Poppins','sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .epic-card { background:#0A0A0A; border:1px solid rgba(255,255,255,0.05); padding:2rem; border-radius:1rem; position:relative; overflow:hidden; transition:border-color 0.3s; }
-    .epic-card:hover { border-color:rgba(212,175,55,0.5); }
-    .epic-card-ghost { position:absolute; right:-2rem; top:-2rem; font-size:8rem; color:rgba(255,255,255,0.04); font-family:'Anton',sans-serif; pointer-events:none; }
-    .epic-card:hover .epic-card-ghost { color:rgba(212,175,55,0.1); }
-  </style>
 </head>
-<body class="bg-background text-white font-sans flex flex-col min-h-screen">
-  <div id="nav-root"></div>
+<body style="background:#0A0A0A;color:#fff;margin:0;padding:0;overflow-x:hidden;">
 
-  <main class="flex-grow pb-20" style="background:#0A0A0A;">
+<!-- NAV -->
+<nav id="main-nav" style="background:rgba(10,10,10,0.95);border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:50;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:70px;">
+    <a href="index.html" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+      <img src="assets/logo.png" alt="E.P.i.C." style="height:44px;width:44px;object-fit:contain;border-radius:4px;">
+      <span style="font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:0.05em;color:#D4AF37;">E.P.i.C.</span>
+    </a>
+    <div class="hidden md:flex" style="align-items:center;gap:2.5rem;">
+      <a href="index.html"   class="nav-link" style="color:rgba(255,255,255,0.7);">Home</a>
+      <a href="about.html"   class="nav-link" style="color:#D4AF37;">About</a>
+      <a href="team.html"    class="nav-link" style="color:rgba(255,255,255,0.7);">Team</a>
+      <a href="magazine.html"class="nav-link" style="color:rgba(255,255,255,0.7);">Magazine</a>
+      <a href="impact.html"  class="nav-link" style="color:rgba(255,255,255,0.7);">Impact</a>
+      <a href="contact.html" class="nav-link" style="color:rgba(255,255,255,0.7);">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <a href="magazine.html" class="hidden md:inline-block" style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;font-weight:700;padding:0.5rem 1.25rem;border-radius:9999px;font-size:0.875rem;text-decoration:none;letter-spacing:0.05em;">LATEST ISSUE</a>
+      <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" style="background:none;border:none;color:#fff;cursor:pointer;padding:0.5rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden" style="background:rgba(10,10,10,0.98);border-top:1px solid rgba(255,255,255,0.06);padding:1.5rem;">
+    <div style="display:flex;flex-direction:column;gap:1.25rem;">
+      <a href="index.html"    style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
+      <a href="about.html"    style="font-family:'Poppins',sans-serif;font-weight:500;color:#D4AF37;text-decoration:none;">About</a>
+      <a href="team.html"     style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Team</a>
+      <a href="magazine.html" style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Magazine</a>
+      <a href="impact.html"   style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Impact</a>
+      <a href="contact.html"  style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+      <a href="magazine.html" style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;font-weight:700;padding:0.75rem 1.25rem;border-radius:9999px;text-decoration:none;text-align:center;">LATEST ISSUE</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- Hero -->
-    <section class="relative flex items-center justify-center overflow-hidden" style="height:60vh; min-height:400px;">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 z-10" style="background:rgba(0,0,0,0.7);"></div>
-        <img src="about-mission.png" alt="Youth community" class="w-full h-full object-cover">
+<!-- ═══════════════════════════════════════════════════════════
+     HERO — edit heading and subheading
+     ═══════════════════════════════════════════════════════════ -->
+<section style="position:relative;height:60vh;min-height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+  <img src="about-mission.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;pointer-events:none;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.4),rgba(10,10,10,0.95));"></div>
+  <div class="hero-enter" style="position:relative;text-align:center;max-width:800px;padding:0 1.5rem;">
+    <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#D4AF37;text-transform:uppercase;letter-spacing:0.2em;margin:0 0 1rem;">Who We Are</p>
+    <h1 style="font-family:'Anton',sans-serif;font-size:clamp(3rem,8vw,5.5rem);text-transform:uppercase;letter-spacing:0.03em;line-height:0.95;margin:0 0 1.5rem;">Our <span class="text-gradient">Mission</span></h1>
+    <p style="font-family:'Poppins',sans-serif;font-size:1.1rem;color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto;line-height:1.75;">Empowering the next generation to walk boldly in faith, purpose, and community.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     E.P.i.C. ACRONYM — edit each letter's title and description
+     ═══════════════════════════════════════════════════════════ -->
+<section style="padding:5rem 1.5rem;max-width:1280px;margin:0 auto;">
+  <div class="reveal" style="text-align:center;margin-bottom:3rem;">
+    <h2 style="font-family:'Anton',sans-serif;font-size:clamp(2rem,4vw,3.25rem);text-transform:uppercase;letter-spacing:0.03em;margin:0;">What Does <span class="text-gradient">E.P.i.C.</span> Mean?</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+    <!-- E -->
+    <div class="reveal" data-delay="1" style="background:#111;border-radius:1.25rem;padding:2rem;border:1px solid rgba(255,255,255,0.06);text-align:center;">
+      <div style="font-family:'Anton',sans-serif;font-size:4rem;color:#D4AF37;line-height:1;margin-bottom:0.75rem;">E</div>
+      <h3 style="font-family:'Anton',sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.75rem;">Everything</h3>
+      <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">Nothing is out of reach when you walk with God. Everything is on the table — your dreams, your future, your impact.</p>
+    </div>
+
+    <!-- P -->
+    <div class="reveal" data-delay="2" style="background:#111;border-radius:1.25rem;padding:2rem;border:1px solid rgba(255,255,255,0.06);text-align:center;">
+      <div style="font-family:'Anton',sans-serif;font-size:4rem;color:#F97316;line-height:1;margin-bottom:0.75rem;">P</div>
+      <h3 style="font-family:'Anton',sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.75rem;">Possible</h3>
+      <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">With God, all things are possible. We believe in a generation that refuses to be defined by limitations.</p>
+    </div>
+
+    <!-- i -->
+    <div class="reveal" data-delay="3" style="background:#111;border-radius:1.25rem;padding:2rem;border:1px solid rgba(255,255,255,0.06);text-align:center;">
+      <div style="font-family:'Anton',sans-serif;font-size:4rem;color:#3B82F6;line-height:1;margin-bottom:0.75rem;">i</div>
+      <h3 style="font-family:'Anton',sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.75rem;">In</h3>
+      <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">Our strength, our identity, and our hope are found in relationship — in Christ, in community, and in each other.</p>
+    </div>
+
+    <!-- C -->
+    <div class="reveal" data-delay="4" style="background:#111;border-radius:1.25rem;padding:2rem;border:1px solid rgba(255,255,255,0.06);text-align:center;">
+      <div style="font-family:'Anton',sans-serif;font-size:4rem;color:#D4AF37;line-height:1;margin-bottom:0.75rem;">C</div>
+      <h3 style="font-family:'Anton',sans-serif;font-size:1.4rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.75rem;">Christ</h3>
+      <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.6);line-height:1.7;margin:0;">At the center of everything we do is Jesus Christ — our foundation, our compass, and the reason we exist.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     OUR STORY — edit the text and images here
+     ═══════════════════════════════════════════════════════════ -->
+<section style="padding:2rem 1.5rem 5rem;max-width:1280px;margin:0 auto;">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal" style="align-items:center;">
+    <div>
+      <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#D4AF37;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 0.75rem;">Our Journey</p>
+      <h2 style="font-family:'Anton',sans-serif;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;letter-spacing:0.03em;line-height:1.05;margin:0 0 1.5rem;">The Story Behind <span class="text-gradient">E.P.i.C.</span></h2>
+
+      <!-- EDIT: Update the history paragraphs below -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem;">
+        <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.75);line-height:1.8;margin:0;">E.P.i.C. Youth Ministry was born out of a simple but powerful conviction: young people deserve a space where they are seen, valued, and equipped to change the world. What started as a small weekly gathering in 2015 has grown into a movement touching hundreds of lives.</p>
+        <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.75);line-height:1.8;margin:0;">Our magazine began as a newsletter — a few pages stapled together to share testimonies and upcoming events. Today it is a full publication celebrating stories of faith, resilience, and transformation from young people across our community.</p>
+        <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.75);line-height:1.8;margin:0;">We believe every young person carries an extraordinary potential waiting to be unlocked. That is the heartbeat of everything we do — creating environments where God can move and youth can thrive.</p>
       </div>
-      <div class="relative z-20 text-center px-4 hero-enter">
-        <h1 class="font-heading uppercase leading-none mb-4" style="font-size:clamp(3rem,8vw,6rem); letter-spacing:-0.03em;">
-          Our <span style="color:#D4AF37;">Mission</span>
-        </h1>
-        <p class="font-sans font-light max-w-3xl mx-auto leading-relaxed" style="color:rgba(255,255,255,0.8); font-size:clamp(1rem,2vw,1.4rem);">
-          We are a generation of believers passionate about faith, creativity, community, and purpose.
-        </p>
-      </div>
-    </section>
 
-    <!-- E.P.i.C. Acronym -->
-    <section class="py-24 relative" style="background:#111; border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05);">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="font-heading text-4xl md:text-5xl uppercase tracking-wider" style="color:#fff;">What is E.P.i.C.?</h2>
-          <div class="rounded-full mx-auto mt-6" style="width:96px;height:4px;background:#D4AF37;"></div>
+      <div style="margin-top:2rem;">
+        <a href="team.html" style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;font-weight:700;padding:0.75rem 1.75rem;border-radius:9999px;text-decoration:none;letter-spacing:0.05em;font-size:0.9rem;display:inline-block;" onmouseover="this.style.background='#c5a230'" onmouseout="this.style.background='#D4AF37'">MEET THE TEAM →</a>
+      </div>
+    </div>
+
+    <!-- EDIT: Replace these with actual ministry photos -->
+    <div class="grid grid-cols-2 gap-4">
+      <div style="border-radius:1rem;overflow:hidden;aspect-ratio:3/4;">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=500&fit=crop" alt="Ministry photo" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div style="border-radius:1rem;overflow:hidden;aspect-ratio:3/4;margin-top:2rem;">
+        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=500&fit=crop" alt="Ministry photo" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     VALUES — edit the three value cards
+     ═══════════════════════════════════════════════════════════ -->
+<section style="background:#111;border-top:1px solid rgba(255,255,255,0.05);padding:5rem 1.5rem;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="reveal" style="text-align:center;margin-bottom:3rem;">
+      <h2 style="font-family:'Anton',sans-serif;font-size:clamp(2rem,4vw,3.25rem);text-transform:uppercase;letter-spacing:0.03em;margin:0;">Our Core Values</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="reveal" data-delay="1" style="padding:2rem;border-radius:1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);">
+        <div style="width:48px;height:48px;border-radius:0.75rem;background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#D4AF37" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
         </div>
+        <h3 style="font-family:'Anton',sans-serif;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.75rem;">Faith-Centered</h3>
+        <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7;margin:0;">Everything we do is rooted in scripture and a living relationship with Jesus Christ. Faith is not just a topic — it is our foundation.</p>
+      </div>
+      <div class="reveal" data-delay="2" style="padding:2rem;border-radius:1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);">
+        <div style="width:48px;height:48px;border-radius:0.75rem;background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#F97316" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 style="font-family:'Anton',sans-serif;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.75rem;">Community-Driven</h3>
+        <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7;margin:0;">We grow together. From small groups to large events, we create spaces where authentic relationships are formed and people belong.</p>
+      </div>
+      <div class="reveal" data-delay="3" style="padding:2rem;border-radius:1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);">
+        <div style="width:48px;height:48px;border-radius:0.75rem;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#3B82F6" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 style="font-family:'Anton',sans-serif;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.75rem;">Impact-Focused</h3>
+        <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.7;margin:0;">We are called to be the hands and feet of Jesus in our world. From local outreach to global awareness, impact is always the goal.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          <!-- E -->
-          <div class="epic-card reveal" data-delay="1">
-            <div class="epic-card-ghost">E</div>
-            <h3 class="font-heading text-4xl uppercase mb-4" style="color:#D4AF37;">Everything</h3>
-            <p class="font-sans leading-relaxed relative z-10" style="color:#a3a3a3;">We believe that with God, there are no limits to what we can achieve or who we can become.</p>
-          </div>
-
-          <!-- P -->
-          <div class="epic-card reveal" data-delay="2">
-            <div class="epic-card-ghost">P</div>
-            <h3 class="font-heading text-4xl uppercase mb-4" style="color:#D4AF37;">Possible</h3>
-            <p class="font-sans leading-relaxed relative z-10" style="color:#a3a3a3;">Every dream, every calling, and every purpose is within reach when aligned with His will.</p>
-          </div>
-
-          <!-- I -->
-          <div class="epic-card reveal" data-delay="3">
-            <div class="epic-card-ghost">I</div>
-            <h3 class="font-heading text-4xl uppercase mb-4" style="color:#D4AF37;">In</h3>
-            <p class="font-sans leading-relaxed relative z-10" style="color:#a3a3a3;">Our identity, our strength, and our foundation are rooted deeply in our relationship with Him.</p>
-          </div>
-
-          <!-- C -->
-          <div class="epic-card reveal" data-delay="4">
-            <div class="epic-card-ghost">C</div>
-            <h3 class="font-heading text-4xl uppercase mb-4" style="color:#D4AF37;">Christ</h3>
-            <p class="font-sans leading-relaxed relative z-10" style="color:#a3a3a3;">He is the center of it all. The reason we gather, the reason we serve, the reason we live.</p>
-          </div>
-
+<!-- FOOTER -->
+<footer style="background:#111;border-top:1px solid rgba(255,255,255,0.06);">
+  <div style="max-width:1280px;margin:0 auto;padding:3.5rem 1.5rem 2rem;">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <img src="assets/logo.png" alt="E.P.i.C." style="height:40px;width:40px;object-fit:contain;border-radius:4px;">
+          <span style="font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:0.05em;color:#D4AF37;">E.P.i.C.</span>
+        </div>
+        <p style="font-family:'Poppins',sans-serif;color:#a3a3a3;line-height:1.8;font-size:0.9rem;max-width:260px;margin:0;">Everything Possible In Christ — a generation on fire for God, built for today, and impacting tomorrow.</p>
+      </div>
+      <div>
+        <h4 style="font-family:'Anton',sans-serif;color:#fff;font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 1.25rem;">Quick Links</h4>
+        <div style="display:flex;flex-direction:column;gap:0.65rem;">
+          <a href="index.html"    class="footer-link">Home</a>
+          <a href="about.html"   class="footer-link">About</a>
+          <a href="team.html"    class="footer-link">Meet the Team</a>
+          <a href="magazine.html"class="footer-link">Magazine Archive</a>
+          <a href="impact.html"  class="footer-link">E.P.i.C. Impact</a>
+          <a href="contact.html" class="footer-link">Contact</a>
         </div>
       </div>
-    </section>
-
-    <!-- Our Story -->
-    <section class="py-24 relative overflow-hidden" style="background:#0A0A0A;">
-      <div class="absolute rounded-full pointer-events-none" style="top:50%;left:0;width:500px;height:500px;background:rgba(249,115,22,0.04);filter:blur(100px);transform:translate(-50%,-50%);"></div>
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-          <!-- Image grid (left on desktop) -->
-          <div class="grid grid-cols-2 gap-4 order-2 lg:order-1">
-            <div class="space-y-4">
-              <div class="rounded-2xl p-6 border flex flex-col items-center justify-center text-center" style="background:#111;border-color:rgba(255,255,255,0.05);aspect-ratio:1;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="#D4AF37" stroke-width="1.5" class="mb-4">
-                  <circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/>
-                </svg>
-                <h4 class="font-heading text-xl uppercase" style="color:#fff;">Purpose Driven</h4>
-              </div>
-              <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=800&auto=format&fit=crop"
-                   alt="Youth community" class="rounded-2xl object-cover w-full border" style="height:192px;border-color:rgba(255,255,255,0.1);">
-            </div>
-            <div class="space-y-4 pt-8">
-              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop"
-                   alt="Youth group" class="rounded-2xl object-cover w-full border" style="height:192px;border-color:rgba(255,255,255,0.1);">
-              <div class="rounded-2xl p-6 border flex flex-col items-center justify-center text-center" style="background:#111;border-color:rgba(255,255,255,0.05);aspect-ratio:1;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="#F97316" stroke-width="1.5" class="mb-4">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-                <h4 class="font-heading text-xl uppercase" style="color:#fff;">Community Focused</h4>
-              </div>
-            </div>
-          </div>
-
-          <!-- Text (right on desktop) -->
-          <div class="space-y-8 order-1 lg:order-2 reveal">
-            <h2 class="font-heading text-4xl md:text-5xl uppercase" style="color:#fff;">Our Story</h2>
-            <div class="space-y-6 font-sans text-lg" style="color:#a3a3a3;">
-              <p>E.P.i.C. started with a simple idea: that youth ministry shouldn't be boring, and church shouldn't be a chore. We wanted to create a space where young people could encounter God authentically.</p>
-              <p>Over the years, we've grown from a small group meeting in a basement to a vibrant movement of creatives, leaders, and passionate believers who are making a tangible impact in our city.</p>
-              <p>This digital magazine is an extension of that mission — a platform to share testimonies, highlight creative expressions of faith, and connect our community throughout the week.</p>
-            </div>
-            <a href="team.html"
-               class="inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold transition-colors mt-4"
-               style="background:#D4AF37;color:#0A0A0A;text-decoration:none;"
-               onmouseover="this.style.background='#c09c2a'" onmouseout="this.style.background='#D4AF37'">
-              MEET THE LEADERSHIP
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
+      <div>
+        <h4 style="font-family:'Anton',sans-serif;color:#fff;font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 1.25rem;">Connect</h4>
+        <div style="font-family:'Poppins',sans-serif;color:#a3a3a3;font-size:0.9rem;line-height:2.1;margin:0 0 1.25rem;">
+          <p style="margin:0;">hello@epicministry.org</p>
+          <p style="margin:0;">(555) 123-4567</p>
+          <p style="margin:0;">123 Faith Avenue, Cityville</p>
+        </div>
+        <div style="display:flex;gap:0.75rem;">
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);" onmouseover="this.style.background='rgba(212,175,55,0.15)';this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.6)';this.style.borderColor='rgba(255,255,255,0.1)'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);" onmouseover="this.style.background='rgba(212,175,55,0.15)';this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.6)';this.style.borderColor='rgba(255,255,255,0.1)'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);" onmouseover="this.style.background='rgba(212,175,55,0.15)';this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.6)';this.style.borderColor='rgba(255,255,255,0.1)'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
       </div>
-    </section>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:3rem;padding-top:1.5rem;text-align:center;">
+      <p style="font-family:'Poppins',sans-serif;color:#a3a3a3;font-size:0.8rem;margin:0;">© 2026 E.P.i.C. Youth Ministry. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
-  </main>
-
-  <div id="footer-root"></div>
-  <div id="toast-container"></div>
-  <script type="module" src="js/about.js"></script>
+<div id="toast-container"></div>
+<script src="js/main.js" type="module"></script>
 </body>
 </html>

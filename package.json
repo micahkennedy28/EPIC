@@ -1,0 +1,8 @@
+{
+  "name": "@workspace/epic-magazine",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx --yes serve@14 . -l $PORT --no-clipboard"
+  }
+}

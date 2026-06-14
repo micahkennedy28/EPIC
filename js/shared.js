@@ -19,7 +19,7 @@ export function renderNav(activePage) {
         <div class="flex items-center justify-between h-20">
 
           <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-                    <img src="assets/logo.png" alt="E.P.i.C. Logo" class="h-12 w-auto object-contain"
+                    <img src="assets/icon.png" alt="E.P.i.C. Logo" class="h-12 w-auto object-contain"
                  onerror="this.style.display='none'">
             <span class="font-heading text-2xl tracking-wider hidden sm:block mt-1" style="color:#D4AF37;font-family:'Anton',sans-serif;">E.P.i.C.</span>
           </a>

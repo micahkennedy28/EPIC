@@ -4,98 +4,303 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meet the Team — E.P.i.C. Youth Ministry</title>
-  <link rel="icon" href="favicon.svg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            background: '#0A0A0A', foreground: '#FFFFFF',
-            card: '#111111', border: '#262626',
-            primary: { DEFAULT: '#D4AF37', foreground: '#0A0A0A' },
-            secondary: { DEFAULT: '#F97316', foreground: '#FFFFFF' },
-            accent: { DEFAULT: '#3B82F6', foreground: '#FFFFFF' },
-            muted: { DEFAULT: '#262626', foreground: '#A6A6A6' },
-          },
-          fontFamily: {
-            heading: ['Anton','sans-serif'],
-            subheading: ['Bebas Neue','sans-serif'],
-            sans: ['Poppins','sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .member-photo { filter: grayscale(1); transition: filter 0.5s; }
-    .flip-card:hover .member-photo { filter: grayscale(0); }
+    /* Flip card fixed height */
+    .flip-card { height: 420px; }
+    @media (max-width: 640px) { .flip-card { height: 380px; } }
   </style>
 </head>
-<body class="bg-background text-white font-sans flex flex-col min-h-screen">
-  <div id="nav-root"></div>
+<body style="background:#0A0A0A;color:#fff;margin:0;padding:0;overflow-x:hidden;">
 
-  <main class="flex-grow pb-24" style="background:#0A0A0A;">
+<!-- NAV -->
+<nav id="main-nav" style="background:rgba(10,10,10,0.95);border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:50;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:70px;">
+    <a href="index.html" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+      <img src="assets/logo.png" alt="E.P.i.C." style="height:44px;width:44px;object-fit:contain;border-radius:4px;">
+      <span style="font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:0.05em;color:#D4AF37;">E.P.i.C.</span>
+    </a>
+    <div class="hidden md:flex" style="align-items:center;gap:2.5rem;">
+      <a href="index.html"   class="nav-link" style="color:rgba(255,255,255,0.7);">Home</a>
+      <a href="about.html"   class="nav-link" style="color:rgba(255,255,255,0.7);">About</a>
+      <a href="team.html"    class="nav-link" style="color:#D4AF37;">Team</a>
+      <a href="magazine.html"class="nav-link" style="color:rgba(255,255,255,0.7);">Magazine</a>
+      <a href="impact.html"  class="nav-link" style="color:rgba(255,255,255,0.7);">Impact</a>
+      <a href="contact.html" class="nav-link" style="color:rgba(255,255,255,0.7);">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <a href="magazine.html" class="hidden md:inline-block" style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;font-weight:700;padding:0.5rem 1.25rem;border-radius:9999px;font-size:0.875rem;text-decoration:none;letter-spacing:0.05em;">LATEST ISSUE</a>
+      <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" style="background:none;border:none;color:#fff;cursor:pointer;padding:0.5rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden" style="background:rgba(10,10,10,0.98);border-top:1px solid rgba(255,255,255,0.06);padding:1.5rem;">
+    <div style="display:flex;flex-direction:column;gap:1.25rem;">
+      <a href="index.html"    style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Home</a>
+      <a href="about.html"    style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">About</a>
+      <a href="team.html"     style="font-family:'Poppins',sans-serif;font-weight:500;color:#D4AF37;text-decoration:none;">Team</a>
+      <a href="magazine.html" style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Magazine</a>
+      <a href="impact.html"   style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Impact</a>
+      <a href="contact.html"  style="font-family:'Poppins',sans-serif;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;">Contact</a>
+      <a href="magazine.html" style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;font-weight:700;padding:0.75rem 1.25rem;border-radius:9999px;text-decoration:none;text-align:center;">LATEST ISSUE</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- Header -->
-    <section class="py-20 relative overflow-hidden" style="background:#111; border-bottom:1px solid rgba(255,255,255,0.05);">
-      <div class="absolute pointer-events-none rounded-full" style="top:0;right:0;width:600px;height:600px;background:rgba(212,175,55,0.04);filter:blur(120px);transform:translate(33%,-50%);"></div>
-      <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-        <h1 class="font-heading uppercase leading-none mb-6" style="font-size:clamp(3rem,8vw,5rem); letter-spacing:-0.03em;">
-          Meet The <span style="color:#D4AF37;">Team</span>
-        </h1>
-        <p class="font-sans text-xl max-w-2xl mx-auto" style="color:#a3a3a3;">
-          The passionate individuals dedicating their time and talents to empower the next generation.
-        </p>
-      </div>
-    </section>
+<!-- PAGE HEADER -->
+<section style="padding:4rem 1.5rem 3rem;text-align:center;max-width:700px;margin:0 auto;" class="hero-enter">
+  <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#D4AF37;text-transform:uppercase;letter-spacing:0.2em;margin:0 0 1rem;">The People Behind The Ministry</p>
+  <h1 style="font-family:'Anton',sans-serif;font-size:clamp(2.5rem,7vw,5rem);text-transform:uppercase;letter-spacing:0.03em;line-height:0.95;margin:0 0 1.25rem;">Meet The <span class="text-gradient">Team</span></h1>
+  <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.7;margin:0;">Click any card to flip it and learn more. Each team member brings a unique gift to the E.P.i.C. family.</p>
+</section>
 
-    <!-- Team Grid (filled by JS) -->
-    <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4 md:px-6">
-        <div id="team-container">
-          <!-- Loading skeleton -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
-            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
-            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
-            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
-            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
-            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
-            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
-            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+<!-- ═══════════════════════════════════════════════════════════
+     TEAM MEMBERS — copy/paste a flip-card block to add a member
+     Click the card in the browser to flip it.
+     EDIT: photo URL, name, role, department, bio, social links
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- LEADERSHIP -->
+<section style="padding:1rem 1.5rem 3rem;max-width:1280px;margin:0 auto;">
+  <h2 class="reveal" style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.25em;margin:0 0 1.75rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(255,255,255,0.07);">Leadership</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Team Member 1 — EDIT below -->
+    <div class="flip-card reveal" data-delay="1" onclick="this.classList.toggle('flipped')" style="cursor:pointer;">
+      <div class="flip-card-inner" style="border-radius:1.25rem;">
+        <!-- FRONT -->
+        <div class="flip-card-front" style="border-radius:1.25rem;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.07);">
+          <!-- EDIT: Replace src with actual photo URL -->
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&h=560&fit=crop&crop=face" alt="Marcus Williams" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;">
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 0.25rem;">Marcus Williams</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#D4AF37;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 0.5rem;">Senior Youth Pastor</p>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.4);margin:0;">Tap to learn more ↗</p>
+          </div>
+        </div>
+        <!-- BACK — EDIT: bio and social links -->
+        <div class="flip-card-back" style="border-radius:1.25rem;background:#111;border:1px solid rgba(212,175,55,0.2);padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;">
+          <div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:600;color:#D4AF37;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 0.5rem;">Senior Youth Pastor</p>
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 1rem;">Marcus Williams</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.7;margin:0 0 1rem;">Pastor Marcus has led E.P.i.C. Youth Ministry since its founding in 2015. With a heart for young people and a passion for relevant, Bible-centered teaching, he has helped shape a generation of bold, purpose-driven believers.</p>
+          </div>
+          <div>
+            <div style="font-family:'Poppins',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">marcus@epicministry.org</div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.3);margin:0;">Tap to flip back</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Join CTA -->
-    <section class="py-20 relative overflow-hidden" style="border-top:1px solid rgba(255,255,255,0.05);">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <div class="max-w-2xl mx-auto p-10 rounded-3xl relative" style="background:#111;border:1px solid rgba(255,255,255,0.1);">
-          <div class="absolute pointer-events-none rounded-full" style="top:0;right:0;width:128px;height:128px;background:rgba(249,115,22,0.1);filter:blur(40px);"></div>
-          <h2 class="font-heading text-4xl uppercase mb-4 relative z-10" style="color:#fff;">Want to serve?</h2>
-          <p class="font-sans mb-8 relative z-10" style="color:#a3a3a3;">
-            We're always looking for passionate people to join our media, creative, and ministry teams.
-          </p>
-          <a href="impact.html"
-             class="inline-flex px-8 py-3 rounded-full font-bold transition-colors relative z-10"
-             style="background:#D4AF37;color:#0A0A0A;text-decoration:none;"
-             onmouseover="this.style.background='#c09c2a'" onmouseout="this.style.background='#D4AF37'">
-            EXPLORE OPPORTUNITIES
-          </a>
+    <!-- Team Member 2 — EDIT below -->
+    <div class="flip-card reveal" data-delay="2" onclick="this.classList.toggle('flipped')" style="cursor:pointer;">
+      <div class="flip-card-inner" style="border-radius:1.25rem;">
+        <div class="flip-card-front" style="border-radius:1.25rem;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.07);">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&h=560&fit=crop&crop=face" alt="Destiny Jackson" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;">
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 0.25rem;">Destiny Jackson</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#D4AF37;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 0.5rem;">Associate Pastor</p>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.4);margin:0;">Tap to learn more ↗</p>
+          </div>
+        </div>
+        <div class="flip-card-back" style="border-radius:1.25rem;background:#111;border:1px solid rgba(212,175,55,0.2);padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;">
+          <div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:600;color:#D4AF37;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 0.5rem;">Associate Pastor</p>
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 1rem;">Destiny Jackson</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.7;margin:0 0 1rem;">Pastor Destiny oversees discipleship programming and women's ministry. Her gift for counseling and mentorship has created a safe space for young women to discover their identity in Christ and step into leadership.</p>
+          </div>
+          <div>
+            <div style="font-family:'Poppins',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">destiny@epicministry.org</div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.3);margin:0;">Tap to flip back</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-  </main>
+  </div>
+</section>
 
-  <div id="footer-root"></div>
-  <div id="toast-container"></div>
-  <script type="module" src="js/team.js"></script>
+<!-- MEDIA & CREATIVE -->
+<section style="padding:0 1.5rem 3rem;max-width:1280px;margin:0 auto;">
+  <h2 class="reveal" style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.25em;margin:0 0 1.75rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(255,255,255,0.07);">Media &amp; Creative</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Team Member 3 — EDIT below -->
+    <div class="flip-card reveal" data-delay="1" onclick="this.classList.toggle('flipped')" style="cursor:pointer;">
+      <div class="flip-card-inner" style="border-radius:1.25rem;">
+        <div class="flip-card-front" style="border-radius:1.25rem;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.07);">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&h=560&fit=crop&crop=face" alt="David Chen" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;">
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 0.25rem;">David Chen</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#F97316;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 0.5rem;">Media &amp; Creative Director</p>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.4);margin:0;">Tap to learn more ↗</p>
+          </div>
+        </div>
+        <div class="flip-card-back" style="border-radius:1.25rem;background:#111;border:1px solid rgba(249,115,22,0.2);padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;">
+          <div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:600;color:#F97316;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 0.5rem;">Media &amp; Creative Director</p>
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 1rem;">David Chen</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.7;margin:0 0 1rem;">David leads the visual identity of E.P.i.C. — from the magazine design to social content and live event production. He believes creativity is worship and uses his gifts to tell God's story in culturally compelling ways.</p>
+          </div>
+          <div>
+            <div style="font-family:'Poppins',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">david@epicministry.org</div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.3);margin:0;">Tap to flip back</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Member 4 — EDIT below -->
+    <div class="flip-card reveal" data-delay="2" onclick="this.classList.toggle('flipped')" style="cursor:pointer;">
+      <div class="flip-card-inner" style="border-radius:1.25rem;">
+        <div class="flip-card-front" style="border-radius:1.25rem;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.07);">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=500&h=560&fit=crop&crop=face" alt="Priya Patel" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;">
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 0.25rem;">Priya Patel</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#F97316;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 0.5rem;">Communications Lead</p>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.4);margin:0;">Tap to learn more ↗</p>
+          </div>
+        </div>
+        <div class="flip-card-back" style="border-radius:1.25rem;background:#111;border:1px solid rgba(249,115,22,0.2);padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;">
+          <div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:600;color:#F97316;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 0.5rem;">Communications Lead</p>
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 1rem;">Priya Patel</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.7;margin:0 0 1rem;">Priya manages all ministry communications, coordinates the magazine editorial calendar, and ensures every message we put out reflects the heart of who we are. She writes, edits, and connects with clarity and grace.</p>
+          </div>
+          <div>
+            <div style="font-family:'Poppins',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">priya@epicministry.org</div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.3);margin:0;">Tap to flip back</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WORSHIP & OUTREACH -->
+<section style="padding:0 1.5rem 5rem;max-width:1280px;margin:0 auto;">
+  <h2 class="reveal" style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.25em;margin:0 0 1.75rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(255,255,255,0.07);">Worship &amp; Outreach</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Team Member 5 — EDIT below -->
+    <div class="flip-card reveal" data-delay="1" onclick="this.classList.toggle('flipped')" style="cursor:pointer;">
+      <div class="flip-card-inner" style="border-radius:1.25rem;">
+        <div class="flip-card-front" style="border-radius:1.25rem;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.07);">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=500&h=560&fit=crop&crop=face" alt="Aisha Thompson" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;">
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 0.25rem;">Aisha Thompson</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#3B82F6;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 0.5rem;">Worship Team Leader</p>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.4);margin:0;">Tap to learn more ↗</p>
+          </div>
+        </div>
+        <div class="flip-card-back" style="border-radius:1.25rem;background:#111;border:1px solid rgba(59,130,246,0.2);padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;">
+          <div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:600;color:#3B82F6;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 0.5rem;">Worship Team Leader</p>
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 1rem;">Aisha Thompson</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.7;margin:0 0 1rem;">Aisha leads our worship experience across all ministry events. With a background in music ministry and a deep love for God's presence, she curates worship that is both authentic and transformative.</p>
+          </div>
+          <div>
+            <div style="font-family:'Poppins',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">aisha@epicministry.org</div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.3);margin:0;">Tap to flip back</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Member 6 — EDIT below -->
+    <div class="flip-card reveal" data-delay="2" onclick="this.classList.toggle('flipped')" style="cursor:pointer;">
+      <div class="flip-card-inner" style="border-radius:1.25rem;">
+        <div class="flip-card-front" style="border-radius:1.25rem;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.07);">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&h=560&fit=crop&crop=face" alt="Michael Rodriguez" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;">
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 0.25rem;">Michael Rodriguez</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;color:#3B82F6;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 0.5rem;">Outreach Coordinator</p>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.4);margin:0;">Tap to learn more ↗</p>
+          </div>
+        </div>
+        <div class="flip-card-back" style="border-radius:1.25rem;background:#111;border:1px solid rgba(59,130,246,0.2);padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;">
+          <div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:600;color:#3B82F6;text-transform:uppercase;letter-spacing:0.15em;margin:0 0 0.5rem;">Outreach Coordinator</p>
+            <h3 style="font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.03em;margin:0 0 1rem;">Michael Rodriguez</h3>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.7);line-height:1.7;margin:0 0 1rem;">Michael organizes our community service initiatives, building bridges between the ministry and the neighborhood. He coordinates volunteer teams, partner organizations, and outreach events that make a tangible difference.</p>
+          </div>
+          <div>
+            <div style="font-family:'Poppins',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">michael@epicministry.org</div>
+            <p style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.3);margin:0;">Tap to flip back</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JOIN THE TEAM CTA -->
+<section style="background:#111;border-top:1px solid rgba(255,255,255,0.05);padding:4rem 1.5rem;text-align:center;">
+  <div class="reveal" style="max-width:600px;margin:0 auto;">
+    <h2 style="font-family:'Anton',sans-serif;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;letter-spacing:0.03em;margin:0 0 1rem;">Want To Join The Team?</h2>
+    <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.65);line-height:1.7;margin:0 0 2rem;">We are always looking for passionate, gifted individuals who want to serve and make an impact. Reach out and let's talk.</p>
+    <a href="contact.html" style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;font-weight:700;padding:0.875rem 2rem;border-radius:9999px;text-decoration:none;letter-spacing:0.05em;display:inline-block;" onmouseover="this.style.background='#c5a230'" onmouseout="this.style.background='#D4AF37'">GET IN TOUCH</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#111;border-top:1px solid rgba(255,255,255,0.06);">
+  <div style="max-width:1280px;margin:0 auto;padding:3.5rem 1.5rem 2rem;">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <img src="assets/logo.png" alt="E.P.i.C." style="height:40px;width:40px;object-fit:contain;border-radius:4px;">
+          <span style="font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:0.05em;color:#D4AF37;">E.P.i.C.</span>
+        </div>
+        <p style="font-family:'Poppins',sans-serif;color:#a3a3a3;line-height:1.8;font-size:0.9rem;max-width:260px;margin:0;">Everything Possible In Christ — a generation on fire for God, built for today, and impacting tomorrow.</p>
+      </div>
+      <div>
+        <h4 style="font-family:'Anton',sans-serif;color:#fff;font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 1.25rem;">Quick Links</h4>
+        <div style="display:flex;flex-direction:column;gap:0.65rem;">
+          <a href="index.html"    class="footer-link">Home</a>
+          <a href="about.html"   class="footer-link">About</a>
+          <a href="team.html"    class="footer-link">Meet the Team</a>
+          <a href="magazine.html"class="footer-link">Magazine Archive</a>
+          <a href="impact.html"  class="footer-link">E.P.i.C. Impact</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Anton',sans-serif;color:#fff;font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 1.25rem;">Connect</h4>
+        <div style="font-family:'Poppins',sans-serif;color:#a3a3a3;font-size:0.9rem;line-height:2.1;margin:0 0 1.25rem;">
+          <p style="margin:0;">hello@epicministry.org</p>
+          <p style="margin:0;">(555) 123-4567</p>
+          <p style="margin:0;">123 Faith Avenue, Cityville</p>
+        </div>
+        <div style="display:flex;gap:0.75rem;">
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);" onmouseover="this.style.background='rgba(212,175,55,0.15)';this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.6)';this.style.borderColor='rgba(255,255,255,0.1)'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);" onmouseover="this.style.background='rgba(212,175,55,0.15)';this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.6)';this.style.borderColor='rgba(255,255,255,0.1)'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);" onmouseover="this.style.background='rgba(212,175,55,0.15)';this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.6)';this.style.borderColor='rgba(255,255,255,0.1)'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:3rem;padding-top:1.5rem;text-align:center;">
+      <p style="font-family:'Poppins',sans-serif;color:#a3a3a3;font-size:0.8rem;margin:0;">© 2026 E.P.i.C. Youth Ministry. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast-container"></div>
+<script src="js/main.js" type="module"></script>
 </body>
 </html>
